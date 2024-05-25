@@ -25,9 +25,9 @@ namespace MusbookingTask.Application.Orders.Commands.DeleteOrder
                     throw new NotFoundException(nameof(Order), request.Id);
                 }
 
-                List<OrderEquipment> rr = await _repositoryOrderEquipmen.GetAll(cancellationToken);
+                List<OrderEquipment> orderEquipments = await _repositoryOrderEquipmen.GetAll(cancellationToken);
 
-                foreach (OrderEquipment i in rr)
+                foreach (OrderEquipment i in orderEquipments)
                 {
                     if (i.OrderId == order.Id)
                     {
