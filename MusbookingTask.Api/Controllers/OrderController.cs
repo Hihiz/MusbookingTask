@@ -6,6 +6,7 @@ using MusbookingTask.Application.Orders.Commands.DeleteOrder;
 using MusbookingTask.Application.Orders.Commands.UpdateOrder;
 using MusbookingTask.Application.Orders.Queries.GetOrderDetail;
 using MusbookingTask.Application.Orders.Queries.GetOrderList;
+using MusbookingTask.Application.Orders.Queries.GetOrderWithPagination;
 
 namespace MusbookingTask.Api.Controllers
 {
@@ -17,11 +18,15 @@ namespace MusbookingTask.Api.Controllers
 
         public OrderController(IMediator mediator) => _mediator = mediator;
 
+        [HttpGet("pagination")]
+        public async Task<ActionResult> GetOrdersWithPagination(int pageIndex, int pageSize) =>
+            Ok(await _mediator.Send(new GetOrderWithPaginationQuery(pageIndex, pageSize)));
+
         [HttpGet]
-        public async Task<ActionResult> GetOrders(CancellationToken cancellationToken) => Ok(await _mediator.Send(new GetOrderListQuery(), cancellationToken));        
+        public async Task<ActionResult> GetOrders(CancellationToken cancellationToken) => Ok(await _mediator.Send(new GetOrderListQuery(), cancellationToken));
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetOrder(int id, CancellationToken cancellationToken) => Ok(await _mediator.Send(new GetOrderDetailQuery(id), cancellationToken));       
+        public async Task<ActionResult> GetOrder(int id, CancellationToken cancellationToken) => Ok(await _mediator.Send(new GetOrderDetailQuery(id), cancellationToken));
 
         [HttpPost]
         public async Task<ActionResult> CreateOrder(CreateOrderCommand command, CancellationToken cancellationToken)
@@ -48,6 +53,6 @@ namespace MusbookingTask.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteOrder(int id, CancellationToken cancellationToken) =>  Ok(await _mediator.Send(new DeleteOrderCommand(id), cancellationToken));        
+        public async Task<ActionResult> DeleteOrder(int id, CancellationToken cancellationToken) => Ok(await _mediator.Send(new DeleteOrderCommand(id), cancellationToken));
     }
 }
