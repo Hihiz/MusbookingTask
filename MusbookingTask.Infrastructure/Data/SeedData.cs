@@ -10,6 +10,11 @@ namespace MusbookingTask.Infrastructure.Data
         {
             using (ApplicationDbContext db = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
+                if (db.Orders.Any())
+                {
+                    return;
+                }
+
                 List<Order> orders = new List<Order>()
                 {
                     new Order
@@ -39,7 +44,12 @@ namespace MusbookingTask.Infrastructure.Data
                 };
 
                 await db.Orders.AddRangeAsync(orders);
-                
+
+                if (db.Equipments.Any())
+                {
+                    return;
+                }
+
                 List<Equipment> equipments = new List<Equipment>()
                 {
                     new Equipment
@@ -66,6 +76,12 @@ namespace MusbookingTask.Infrastructure.Data
                 };
 
                 await db.Equipments.AddRangeAsync(equipments);
+
+
+                if (db.OrderEquipments.Any())
+                {
+                    return;
+                }
 
                 await db.OrderEquipments.AddRangeAsync(
                     new OrderEquipment
