@@ -5,6 +5,12 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusbookingTask.Domain", "MusbookingTask.Domain\MusbookingTask.Domain.csproj", "{A5C50F52-962F-47DC-8D66-333B05B16DBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusbookingTask.Application", "MusbookingTask.Application\MusbookingTask.Application.csproj", "{8D9CFBA3-85CE-43B5-B08C-720F6D174F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusbookingTask.Infrastructure", "MusbookingTask.Infrastructure\MusbookingTask.Infrastructure.csproj", "{F9B5AB76-A94B-432B-A075-35AD4DBC4D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusbookingTask.Api", "MusbookingTask.Api\MusbookingTask.Api.csproj", "{9926C932-B009-47E9-BC8C-11CE06A63F76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{A5C50F52-962F-47DC-8D66-333B05B16DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5C50F52-962F-47DC-8D66-333B05B16DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5C50F52-962F-47DC-8D66-333B05B16DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9CFBA3-85CE-43B5-B08C-720F6D174F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9CFBA3-85CE-43B5-B08C-720F6D174F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9CFBA3-85CE-43B5-B08C-720F6D174F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9CFBA3-85CE-43B5-B08C-720F6D174F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B5AB76-A94B-432B-A075-35AD4DBC4D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B5AB76-A94B-432B-A075-35AD4DBC4D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B5AB76-A94B-432B-A075-35AD4DBC4D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B5AB76-A94B-432B-A075-35AD4DBC4D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9926C932-B009-47E9-BC8C-11CE06A63F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9926C932-B009-47E9-BC8C-11CE06A63F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9926C932-B009-47E9-BC8C-11CE06A63F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9926C932-B009-47E9-BC8C-11CE06A63F76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
