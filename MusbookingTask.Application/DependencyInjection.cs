@@ -18,7 +18,7 @@ namespace MusbookingTask.Application
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
-            services.FluentValidatorInit();
+          
 
             return services;
         }
